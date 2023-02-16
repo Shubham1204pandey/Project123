@@ -1,0 +1,12 @@
+---
+ - name: create web using Dockerfile
+   hosts: localhost
+   tasks:
+          - name: build dockerimage
+            docker_image:
+                    name: imege:latest    
+                    build:
+                        path: /home/ec2-user/Project123/Dockerfile
+                        source: build
+                    state: present
+
